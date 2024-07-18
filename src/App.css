@@ -1,38 +1,92 @@
-.App {
-  text-align: center;
-}
-
+/* App.css */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  /* animation: rotate infinite 5s linear; */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes rotate {
+  from {
+    transform: rotate(0deg); /* Rotate from 0 degrees */
+  }
+  to {
+    transform: rotate(360deg); /* Rotate to 360 degrees (full circle) */
   }
 }
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust the min and max width as needed */
+  grid-gap: 20px; /* Space between the grid items */
+  padding: 20px;
+  justify-content: center;
+}
+
+.album-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black; /* Optional border */
+  padding: 10px;
+  background-color: white; /* Optional background color */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional shadow for better visibility */
+}
+/* App.css */
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel-item {
+  flex: none;
+  scroll-snap-align: start;
+}
+
+.carousel-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem; /* To make the images rounded */
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for better appearance */
+}
+
+.select-category {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.select-category select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
 
 .App-header {
-  background-color: #282c34;
+  background-color: #900606;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 3vmin);
   color: white;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #e0e70e;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bold-red {
+  color: red;
+  font-weight: bold;
+}
+
+.yellow {
+  color: #e7d616;
+  font-weight: bold;
 }
