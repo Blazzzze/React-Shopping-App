@@ -535,6 +535,84 @@
 // }
 
 // export default App;
+// import React, { useState, useEffect } from 'react';
+// import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+// import Navbar from './components/Navbar';
+// import Home from './components/Home';
+// import About from './components/About';
+// import Product from './components/Product';
+// import Profile from './components/Profile';
+// import ProductDetails from './components/ProductDetails';
+// import Cart from './components/Cart';
+// import { auth } from './firebase';
+// import { CartProvider } from './context/CartContext';
+// import './App.css';
+
+// function App() {
+//   const [isAuthenticated, setAuthenticated] = useState(false);
+
+//   useEffect(() => {
+//     const unsubscribe = auth.onAuthStateChanged(user => {
+//       if (user) {
+//         setAuthenticated(true);
+//       } else {
+//         setAuthenticated(false);
+//       }
+//     });
+//     return () => unsubscribe();
+//   }, []);
+
+//   return (
+//     <CartProvider>
+//       <div className="App">
+//         {/* <Router> */}
+//           <Navbar />
+//           <Routes>
+//             <Route path="/" element={<Home />} />
+//             <Route path="/about" element={<About />} />
+//             <Route
+//               path="/profile"
+//               element={<Profile setAuthenticated={setAuthenticated} />}
+//             />
+//             <Route
+//               path="/products"
+//               element={
+//                 isAuthenticated ? (
+//                   <Product />
+//                 ) : (
+//                   <Navigate to="/profile" />
+//                 )
+//               }
+//             />
+//             <Route
+//               path="/products/:id"
+//               element={
+//                 isAuthenticated ? (
+//                   <ProductDetails />
+//                 ) : (
+//                   <Navigate to="/profile" />
+//                 )
+//               }
+//             />
+//             <Route
+//               path="/cart"
+//               element={
+//                 isAuthenticated ? (
+//                   <Cart />
+//                 ) : (
+//                   <Navigate to="/profile" />
+//                 )
+//               }
+//             />
+//           </Routes>
+//         {/* </Router> */}
+//       </div>
+//     </CartProvider>
+//   );
+// }
+
+// export default App;
+
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -564,8 +642,8 @@ function App() {
 
   return (
     <CartProvider>
-      <div className="App">
-        {/* <Router> */}
+      {/* <Router> */}
+        <div className="App">
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -605,8 +683,8 @@ function App() {
               }
             />
           </Routes>
-        {/* </Router> */}
-      </div>
+        </div>
+      {/* </Router> */}
     </CartProvider>
   );
 }

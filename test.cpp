@@ -4,40 +4,54 @@
 
 using namespace std;
 
-void solve(int n, int m, int k) {
-    vector<int> permutation(n);
-    
-    // Initialize indices for filling values
-    int large_index = 0;
-    int small_index = n - 1;
+vector<vector<int>> create_matrix(int n, int m, const vector<vector<int>>& a) {
+    vector<vector<int>> b(n, vector<int>(m, -1));
 
-    // Fill in the largest values first
-    for (int i = k; i <= n; ++i) {
-        permutation[large_index++] = i;
-    }
-    
-    // Then fill in the smallest values in between
-    for (int i = k-1; i >= 1; --i) {
-        permutation[small_index--] = i;
-    }
-
-    // Print the permutation
     for (int i = 0; i < n; ++i) {
-        cout << permutation[i] << " ";
+        for (int j = 0; j < m; ++j) {
+            // Find a suitable value for b[i][j] different from a[i][j]
+            for (int k = 1; k <= n * m; ++k) {
+                if (k != a[i][j] && find(b[i].begin(), b[i].end(), k) == b[i].end()) {
+                    b[i][j] = k;
+                    break;
+                }
+            }
+            if (b[i][j] == -1) {
+                // No suitable value found
+                return {{-1}};
+            }
+        }
     }
-    cout << endl;
+    return b;
 }
 
 int main() {
     int t;
     cin >> t;
-    
+
     while (t--) {
-        int n, m, k;
-        cin >> n >> m >> k;
-        
-        solve(n, m, k);
+        int n, m;
+        cin >> n >> m;
+
+        vector<vector<int>> a(n, vector<int>(m));
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < m; ++j) {
+                cin >> a[i][j];
+            }
+        }
+
+        vector<vector<int>> b = create_matrix(n, m, a);
+
+        if (b[0][0] == -1) {
+            cout << -1 << endl;
+        } else {
+            for (int i = 0; i < n; ++i) {
+                for (int j = 0; j < m; ++j) {
+                    cout << b[i][j] << " ";
+                }
+                cout << endl;
+            }
+        }
     }
-    
     return 0;
 }
