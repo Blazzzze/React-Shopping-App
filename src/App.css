@@ -31,28 +31,66 @@
   box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional shadow for better visibility */
 }
 /* App.css */
-.carousel-container {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
+.carousel-section {
+  background-color: #00bfff; /* Example: set your desired background color */
+  padding: 20px; /* Optional: adjust padding */
+  border-radius: 8px; /* Optional: rounded corners */
 }
 
-.carousel-item {
-  flex: none;
-  scroll-snap-align: start;
+.carousel-section img {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
 }
 
-.carousel-item img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 0.5rem; /* To make the images rounded */
+.product-item {
+  padding: 20px; /* Optional: adjust padding */
+  background-color: #fff; /* Example: set the background color of the frame */
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add shadow */
 }
 
-.carousel-container::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for better appearance */
+
+
+.featured-products {
+  margin-bottom: 4rem;
+  background-color: #f7fafc;
 }
 
+.product-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.product-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.promo-banners .promo-banner {
+  margin-bottom: 2rem;
+}
+
+.customer-testimonials {
+  margin-bottom: 4rem;
+}
+
+.testimonials {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.testimonial {
+  background-color: #f7fafc;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 .select-category {
   margin-bottom: 20px;
   display: flex;
