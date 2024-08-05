@@ -24,19 +24,44 @@ const Home = () => {
   return (
     <div className="home-page">
       <div className="carousel-section h-96 rounded-none mb-8">
-      <Carousel>
-            {products.map((product) => (
-              <div key={product.id} className="flex flex-col items-center">
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  className="h-40 w-full object-contain mb-4"
-                />
-                <h3 className="font-bold text-lg">{product.title}</h3>
-                <p className="text-gray-700">${product.price.toFixed(2)}</p>
-              </div>
-            ))}
-          </Carousel>
+        <Carousel>
+          <div className="flex flex-col items-center product-item">
+            <img
+              src={process.env.PUBLIC_URL + "/assets/images/image1.png"}
+              alt="Product 1"
+              className="h-40 w-full object-contain mb-4"
+            />
+            <h3 className="font-bold text-lg">Product 1</h3>
+            <p className="text-gray-700">$109.95</p>
+          </div>
+          <div className="flex flex-col items-center product-item">
+            <img
+              src={process.env.PUBLIC_URL + "/assets/images/image2.png"}
+              alt="Product 2"
+              className="h-40 w-full object-contain mb-4"
+            />
+            <h3 className="font-bold text-lg">Product 2</h3>
+            <p className="text-gray-700">$22.30</p>
+          </div>
+          <div className="flex flex-col items-center product-item">
+            <img
+              src={process.env.PUBLIC_URL + "/assets/images/image3.png"}
+              alt="Product 3"
+              className="h-40 w-full object-contain mb-4"
+            />
+            <h3 className="font-bold text-lg">Product 3</h3>
+            <p className="text-gray-700">$55.99</p>
+          </div>
+          <div className="flex flex-col items-center product-item">
+            <img
+              src={process.env.PUBLIC_URL + "/assets/images/image4.png"}
+              alt="Product 4"
+              className="h-40 w-full object-contain mb-4"
+            />
+            <h3 className="font-bold text-lg">Product 4</h3>
+            <p className="text-gray-700">$15.99</p>
+          </div>
+        </Carousel>
       </div>
 
       {/* Featured Products Section */}

@@ -32,7 +32,7 @@
 }
 /* App.css */
 .carousel-section {
-  background-color: #00bfff; /* Example: set your desired background color */
+  background-color: #2196F3; /* Example: set your desired background color */
   padding: 20px; /* Optional: adjust padding */
   border-radius: 8px; /* Optional: rounded corners */
 }
@@ -46,7 +46,7 @@
 
 .product-item {
   padding: 20px; /* Optional: adjust padding */
-  background-color: #fff; /* Example: set the background color of the frame */
+  background-color: #2196F3; /* Example: set the background color of the frame */
   border-radius: 8px; /* Optional: rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add shadow */
 }

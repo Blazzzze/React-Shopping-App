@@ -38,7 +38,7 @@ function App() {
             path="/profile"
             element={
               isAuthenticated ? (
-                <Navigate to="/" />
+                <Navigate to="/products" />
               ) : (
                 <Profile setIsAuthenticated={setIsAuthenticated} />
               )

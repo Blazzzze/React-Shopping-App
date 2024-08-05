@@ -1,9 +1,7 @@
 import React, { createContext, useState } from "react";
 
-// Create a Context
 const CartContext = createContext();
 
-// Create a Provider Component
 const CartProvider = ({ children }) => {
   console.log(JSON.parse(sessionStorage.getItem("cartItems")));
   const [cartItems, setCartItems] = useState(
